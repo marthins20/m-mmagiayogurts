@@ -1,0 +1,65 @@
+/* estilos-contacto.css */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #fff0f6, #ffe0ec);
+  animation: fadeIn 1.5s ease-in-out;
+  color: #4a0033;
+}
+
+header.banner {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(90deg, #ff69b4, #ffc0cb, #ff69b4);
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+header.banner h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.neon-border {
+  border: 3px solid;
+  border-image: linear-gradient(45deg, #ff69b4, #ffc0cb, #ff69b4) 1;
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.6);
+  padding: 2rem;
+  border-radius: 20px;
+  transition: box-shadow 0.6s ease, border-image 0.6s ease;
+}
+
+.neon-border:hover {
+  box-shadow: 0 0 30px rgba(255, 105, 180, 0.9);
+  border-image: linear-gradient(45deg, #ffc0cb, #ff69b4, #ffc0cb) 1;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input, textarea {
+  padding: 0.8rem;
+  border: 2px solid #ff69b4;
+  border-radius: 10px;
+  background: #fff;
+  font-size: 1rem;
+}
+
+button {
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 10

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carrito de Compras</title>
+  <link rel="stylesheet" href="css/estilocarrito.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Resumen del Carrito</h2>
+    <div class="carrito">
+      <ul id="lista-carrito"></ul>
+      <button onclick="vaciarCarrito()">Vaciar carrito</button>
+      <br>
+      <button class="volver-btn" onclick="volverAlInicio()">Volver a la tienda</button>
+    </div>
+    <div class="formulario" id="formulario">
+      <h3>Datos para el pedido</h3>
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required>
+      </div>
+      <div class="form-group">
+        <label for="telefono">Teléfono:</label>
+        <input type="text" id="telefono" required>
+      </div>
+      <div class="form-group">
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" required>
+      </div>
+      <div class="form-group">
+        <label for="ciudad">Ciudad:</label>
+        <input type="text" id="ciudad" required>
+      </div>
+      <div class="form-group">
+        <label for="pago">Medio de pago:</label>
+        <select id="pago">
+          <option value="Efectivo">Efectivo</option>
+          <option value="Nequi">Nequi</option>
+          <option value="Daviplata">Daviplata</option>
+          <option value="Transferencia">Transferencia bancaria</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="diaEntrega">Día de entrega:</label>
+        <select id="diaEntrega">
+          <option value="Jueves">Jueves</option>
+          <option value="Sábado">Sábado</option>
+        </select>
+      </div>
+      <button onclick="enviarWhatsApp()">Enviar pedido por WhatsApp</button>
+    </div>
+  </div>
+
+  <div id="carrito-flotante" class="oculto">
+    Producto agregado al carrito.
+  </div>
+
+  <span>Carrito: <span id="contador-carrito">0</span> items</span>
+
+  <script>
+    function volverAlInicio() {
+      window.location.href = "index.html";
+    }
+  </script>
+  <script src="Java Scrip/progrmacion carrito.js"></script>
+</body>
+</html>
+

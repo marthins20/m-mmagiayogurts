@@ -1,0 +1,192 @@
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.parrafo-resaltado {
+ position: relative;
+  padding: 1.5rem;
+  font-size: 1.25rem;
+  border-radius: 1rem;
+  color: #831843;
+  text-align: justify;
+  background: 
+    linear-gradient(#ffe4e6, #ffe4e6) padding-box,  /* fondo interno */
+    linear-gradient(135deg, #f472b6, #faccf1, #f472b6) border-box; /* borde degradado */
+  border: 1px solid transparent;
+  box-shadow: 0 4px 12px rgba(249, 168, 212, 0.4);
+  transition: background 0.8s ease, box-shadow 0.5s ease;
+  }
+  /* Efecto al pasar el mouse */
+.parrafo-resaltado:hover {
+  background: 
+    linear-gradient(#fff1f5, #fff1f5) padding-box,
+    linear-gradient(135deg, #ec4899, #f9a8d4, #ec4899) border-box;
+  box-shadow: 0 6px 16px rgba(249, 168, 212, 0.6);
+}
+
+
+.card-container {
+  perspective: 1000px;
+}
+
+.card {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+.card-side {
+  backface-visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+/* HEADER */
+header {
+  background: transparent;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  padding: 10px;
+  transition: top 0.4s ease-in-out;
+  justify-content: center; 
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 100px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+
+}
+.logo:hover {
+  transform: scale(1.5); 
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  backdrop-filter: blur(10px);
+}
+
+.nav-links a {
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  color: #000808;
+  text-decoration: none;
+  letter-spacing: 1px;
+  padding: 10px 15px;
+  transition: 0.3s ease;
+}
+
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #00f5ff, #ff00c8);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.nav-links a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #ff00c8, 0 0 20px #ff00c8;
+}
+
+.card-container {
+  perspective: 1000px;
+}
+
+.card {
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+.card-side {
+  backface-visibility: hidden;
+  transition: box-shadow 0.5s ease, transform 0.5s ease;
+  border: 4px solid transparent;
+}
+
+.card-side:hover {
+  box-shadow: 0 8px 20px rgba(249, 168, 212, 0.6), 0 0 0 4px #f9a8d4;
+  border-image: linear(135deg, #f472b6, #faccf1) 1;
+}
+  
+.card-back {
+  transform: rotateY(180deg);
+}
+
+/* Media Queries para diseño responsivo */
+
+/* Para pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem; /* Tamaño de fuente más pequeño para móviles */
+  }
+
+  p {
+    font-size: 0.9rem; /* Tamaño de fuente más pequeño para móviles */
+  }
+
+  .content {
+    padding: 15px; /* Menos padding en móviles */
+  }
+}
+
+/* Para pantallas medianas (tablets) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  h1 {
+    font-size: 1.8rem; /* Tamaño de fuente intermedio para tablets */
+  }
+
+  p {
+    font-size: 1rem; /* Tamaño de fuente intermedio para tablets */
+  }
+}
+
+/* Para pantallas grandes (escritorios) */
+@media (min-width: 1025px) {
+  h1 {
+    font-size: 2.5rem; /* Tamaño de fuente más grande para escritorios */
+  }
+
+  p {
+    font-size: 1.2rem; /* Tamaño de fuente más grande para escritorios */
+  }
+}

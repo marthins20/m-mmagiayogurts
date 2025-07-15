@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>M&M Magia de Yogurts</title>
+  <link rel="stylesheet" href="css/estilo.css" />
+  <link rel="icon" href="assets/logo.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <video autoplay muted loop class="video-background">
+    <source src="multimedia/video1.mov" type="video/mp4">
+    Tu navegador no soporta el video.
+  </video>
+  <div class="overlay">
+  </div>
+
+  <header>
+    <nav>
+      <img src="imagenes/logo1.png" alt="Logo de la página" class="logo">
+      <ul class="nav-links">
+        <li><a href="#hero">Inicio</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+      <!-- Ícono del carrito -->
+      <a href="Carrito.html" class="carrito-icono">
+      <i class="fas fa-shopping-cart"></i>
+      <span id="contador-carrito">0</span>
+     </a>
+    </nav>
+  </header>
+  
+  <main>
+    <section id="hero" class="section fade-in">
+    <h1 class="hero-title">¡Bienvenido a nuestro mundo de sabores!</h1>
+    <p class="hero-description">
+    Explora nuestra deliciosa variedad de yogures, cada uno elaborado con ingredientes de la más alta calidad.
+  </p>
+  <!-- Carrusel de imágenes -->
+<div class="carousel">
+  <div class="carousel-ilusion">
+  <div class="carousel-track">
+      <!-- Imágenes originales -->
+      <img src="imagenes/pote.jpg" alt="Yogurt 1">
+      <img src="imagenes/pote1.jpg" alt="Yogurt 2">
+      <img src="imagenes/pote2.jpg" alt="Yogurt 3">
+      <!-- Duplicadas para efecto continuo -->
+    
+      <img src="imagenes/pote.jpg" alt="Yogurt 1">
+      <img src="imagenes/pote1.jpg" alt="Yogurt 2">
+      <img src="imagenes/pote2.jpg" alt="Yogurt 3">
+    </div>
+  </div>
+</div>
+</section>
+    <br> <br>
+    <br> <br>
+    <br> <br>
+    <section id="productos" class="section fade-in">
+      <h2>Productos</h2>
+      <br> <br>
+      <h3>Disfruta de la deliciosa variedad de yogures que hemos preparado para ti. Con una textura cremosa y un sabor irresistible, cada opción está hecha con ingredientes cuidadosamente seleccionados para ofrecerte la mejor experiencia.</h3>
+      <br> <br>
+            <h2> ¿Cuál probarás primero? 😋🥄</h2>
+                <br> <br>
+    <br> <br>
+    <br> <br>
+      <div class="productos">
+        <div class="producto">
+          <img src="imagenes/durazno.png" alt="Yogurt Frutas"/>
+          <h3>Durazno:</h3>
+          <h3>Suaves trozos de durazno se combinan con la cremosidad del yogur para una explosión de frescura y dulzura natural.</h3>
+          <h3>$13.000</h3>
+          <button onclick="agregarAlCarrito('Durazno')">Agregar al carrito</button>
+        </div>
+        <div class="producto">
+          <img src="imagenes/maracuyá.png" alt="Yogurt Griego"/>
+          <h3>Maracuyá:</h3>
+          <h3>Un toque exótico con la acidez perfecta del maracuyá, equilibrado con la suavidad del yogur.</h3>
+          <h3>$13.000</h3>
+          <button onclick="agregarAlCarrito('Maracuyá')">Agregar al carrito</button>
+        </div>
+        <div class="producto">
+          <img src="imagenes/mora.png" alt="Yogurts"/>
+          <h3>Mora:</h3>
+          <h3>Intenso y vibrante, con el delicioso sabor de la mora que aporta un toque frutal único.</h3>
+          <h3>$13.000</h3>
+          <button onclick="agregarAlCarrito('Mora')">Agregar al carrito</button>
+        </div>
+        <div class="producto">
+          <img src="imagenes/fresa.png" alt="Yogurts"/>
+          <h3>Fresa:</h3>
+          <h3>La clásica combinación de fresas frescas y yogur cremoso, ideal para los amantes de lo tradicional.</h3>
+          <h3>$13.000</h3>
+          <button onclick="agregarAlCarrito('Fresa')">Agregar al carrito</button>
+        </div>
+        <div class="producto">
+          <img src="imagenes/café.png" alt="Yogurts"/>
+          <h3>Café:</h3>
+          <h3>La fusión perfecta entre el aroma envolvente del café y la suavidad del yogur, para un placer sofisticado.</h3>
+          <h3>$13.000</h3>
+          <button onclick="agregarAlCarrito('Café')">Agregar al carrito</button>
+        </div>
+        <div class="producto">
+          <img src="imagenes/arequipe.png" alt="Yogurts"/>
+          <h3>Arequipe con pasas:</h3>
+          <h3>Un sabor indulgente donde el dulce arequipe se mezcla con pasas jugosas, creando una experiencia única y deliciosa.</h3>
+          <h3>$13.000</h3>
+          <button onclick="agregarAlCarrito('Arequipe con pasas')">Agregar al carrito</button>
+        </div>
+      </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 M&M Servicios TI. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="Java Scrip/programacion.js"></script>
+  <script src="Java Scrip/progrmacion carrito.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<!-- Plugin ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<div id="carrito-flotante" class="carrito-flotante oculto">
+  <div class="barra-superior">
+    <h3>Lista productos agregados al carrito de compra</h3>
+    <span class="cerrar-carrito" onclick="cerrarCarrito()">↩️</span>
+  </div>
+  <ul id="lista-carrito"></ul>
+  <p id="total-carrito"></p>
+  <button onclick="vaciarCarrito()">Vaciar carrito</button>
+  <button onclick="window.location.href='Carrito.html'">Finalizar pedido</button>
+</div>
+  </div>
+</body>
+</html>
