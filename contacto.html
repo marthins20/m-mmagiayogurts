@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contacto | M&M Magia de Yogurt</title>
+  <link rel="stylesheet" href="css/contacto.css"/>
+  <script defer src="Java Scrip/contacto.js"></script>
+</head>
+<body>
+  <header class="banner">
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Ir al menú</a></li>
+      </ul>
+    </nav>
+    <h1>Contáctanos</h1>
+    <p>Estamos aquí para escucharte 🍶✨</p>
+  </header>
+
+  <main class="container">
+    <section class="form-section neon-border">
+      <h2>Formulario de contacto</h2>
+      <form id="contactForm" method="POST" action="https://formspree.io/f/tu_formulario_aquí">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+        <button type="submit">Enviar mensaje ✨</button>
+      </form>
+    </section>
+
+    <section class="instagram-section neon-border">
+      <h2>Síguenos en Instagram</h2>
+      <div class="instagram-embed">
+        <!-- Cambia el enlace por el de tu Instagram -->
+        <iframe src="https://www.instagram.com/mym_magiadeyogurt/p/DHbxBpeS45B/" 
+                width="100%" height="400" frameborder="0" 
+                scrolling="no" allowtransparency="true">
+        </iframe>
+      </div>
+    </section>
+  </main>
+
+  <!-- Botón de WhatsApp flotante -->
+  <a class="whatsapp-float" 
+     href="https://wa.me/573043877555" 
+     target="_blank" 
+     aria-label="Contáctanos por WhatsApp">
+    <img src="https://img.icons8.com/ios-filled/100/25D366/whatsapp.png" alt="WhatsApp" width="60"/>
+  </a>
+</body>
+</html>
+

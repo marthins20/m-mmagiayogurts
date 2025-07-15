@@ -1,0 +1,114 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3d0da;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2, h3 {
+  text-align: center;
+  color: #333;
+}
+
+.carrito, .formulario {
+  margin-top: 30px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+table th, table td {
+  padding: 12px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input, select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button {
+  padding: 7px 12px;
+  background-color: #7a1c0c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: auto; /* Alineación a la derecha si el contenedor tiene display: flex */
+  margin-bottom: 5px;
+  width: auto; /* Evita que ocupe todo el ancho */
+  display: flex;
+  justify-content: flex-end; /* Alinea todos los botones a la derecha */
+  gap: 10px;
+}
+
+
+button:hover {
+  background-color: hsl(328, 83%, 68%);
+}
+
+/* Media Queries para diseño responsivo */
+
+/* Para pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem; /* Tamaño de fuente más pequeño para móviles */
+  }
+
+  p {
+    font-size: 0.9rem; /* Tamaño de fuente más pequeño para móviles */
+  }
+
+  .content {
+    padding: 15px; /* Menos padding en móviles */
+  }
+}
+
+/* Para pantallas medianas (tablets) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  h1 {
+    font-size: 1.8rem; /* Tamaño de fuente intermedio para tablets */
+  }
+
+  p {
+    font-size: 1rem; /* Tamaño de fuente intermedio para tablets */
+  }
+}
+
+/* Para pantallas grandes (escritorios) */
+@media (min-width: 1025px) {
+  h1 {
+    font-size: 2.5rem; /* Tamaño de fuente más grande para escritorios */
+  }
+
+  p {
+    font-size: 1.2rem; /* Tamaño de fuente más grande para escritorios */
+  }
+}

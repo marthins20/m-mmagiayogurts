@@ -1,0 +1,600 @@
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* HEADER */
+header {
+  background: transparent;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  padding: 10px;
+  transition: top 0.4s ease-in-out;
+  justify-content: center; 
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 100px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+
+}
+.logo:hover {
+  transform: scale(1.5); 
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  backdrop-filter: blur(10px);
+}
+
+.nav-links a {
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  color: #000808;
+  text-decoration: none;
+  letter-spacing: 1px;
+  padding: 10px 15px;
+  transition: 0.3s ease;
+}
+
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #00f5ff, #ff00c8);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.nav-links a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #ff00c8, 0 0 20px #ff00c8;
+}
+
+/* PANTALLA DE INICIO */
+.overlay {
+  background-image: url('fondo1.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+/* CONTENIDO PRINCIPAL */
+main {
+  position: relative;
+  z-index: 0; /* igual que overlay, no basta */
+}
+
+/* Secciones animadas */
+.section {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* PRODUCTOS */
+.productos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.producto {
+  width: 250px;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.producto:hover {
+  transform: translateY(-10px);
+}
+
+.producto img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 40px;
+  background: #f5acd0;
+  color: white;
+}
+
+/* BOTÓN FLOTANTE DE WHATSAPP */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  text-align: center;
+  text-decoration: none;
+}
+
+
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.5;
+  transition: opacity 0.5s ease-in-out;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+  margin: 0;
+  padding: 0;
+}
+
+.overlay {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  z-index: 0; /* Asegura que el contenido se muestre sobre el video */
+}
+
+footer {
+  text-align: center;
+  padding: 40px;
+  background: lch(61.82% 64.09 3.53);
+  color: white;
+  }
+
+  .productos button {
+    background-color: #ffe4e1; /* rosa claro */
+    border: 1px solid #ffc0cb; /* rosa pastel */
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .productos button:hover {
+    background-color: #ffd1dc; /* tono más intenso al pasar el cursor */
+    transform: scale(1.05);
+  }
+/* Estilo para la sección de productos */
+.productos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+}
+
+.producto {
+  background: #f9f9ff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 15px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+}
+
+.producto:hover {
+  transform: scale(1.02);
+}
+
+.producto img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* Botón de agregar al carrito */
+.producto button {
+  background-color: #ffd6e0;
+  color: #333;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.producto button:hover {
+  background-color: #fcbacb;
+}
+
+/* Carrito */
+#carrito {
+  background-color: #e8f8f5;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 50px;
+  border: 1px solid #c3e6e1;
+}
+
+#carrito h2 {
+  margin-bottom: 30px;
+  color: #e40d4d;
+}
+
+#lista-carrito {
+  list-style: none;
+  padding-left: 0;
+}
+
+#lista-carrito li {
+  padding: 5px 0;
+  border-bottom: 1px solid #d1f0ea;
+}
+
+/* Botón vaciar carrito */
+#carrito button {
+  background-color: #ffcccc;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  margin-top: 10px;
+  cursor: pointer;
+  color: #073b02;
+}
+
+#carrito button:hover {
+  background-color: #b6ffb3;
+}
+
+/* Formulario */
+#formulario {
+  margin-top: 30px;
+  background-color: #fff6e5;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #ffe3a3;
+}
+
+#formulario h3 {
+  margin-bottom: 15px;
+  color: #8b572a;
+}
+
+#formulario label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+#formulario input,
+#formulario select {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 4px;
+}
+
+#formulario button {
+  background-color: #a5d6a7;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  margin-top: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+#formulario button:hover {
+  background-color: #81c784;
+}
+.carrito-flotante {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  width: 300px;
+  background: #fff;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  z-index: 9999;
+  transition: all 0.3s ease;
+}
+
+.carrito-flotante h3 {
+  margin-top: 0;
+}
+
+.carrito-flotante ul {
+  list-style: none;
+  padding: 0;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.carrito-flotante button {
+  margin-top: 5px;
+  margin-right: 5px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.oculto {
+  display: none;
+}
+
+
+#contador-carrito {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: #ff6f61;
+  color: white;
+  border-radius: 50%;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #fefefe;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.carrito-icono {
+  font-size: 20px;
+  color: #333;
+  position: relative;
+  margin-left: 20px;
+  text-decoration: none;
+ 
+}
+
+#contador-carrito {
+  background-color: #ff6f61;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  position: absolute;
+  top: -8px;
+  right: -10px;
+}
+.carousel {
+  width: 100%;
+  max-width: 1800px;
+  height: 500px;
+  margin: 50px auto;
+  overflow: hidden;
+  position: relative;
+  border-radius: 1rem;
+  box-shadow: 0 0 30px rgba(243, 120, 71, 0.4);
+  
+}
+
+.carousel-ilusion {
+  width: 90%;
+  height: 90%;
+}
+
+.carousel-track {
+  gap: 20px;
+  display: flex;
+  height: 130%;
+  padding-right: 20px;
+  animation: scrolling 20s infinite; /* Más lento y continuo */
+}
+
+.carousel-track img {
+  width: 60%;
+  height: 90%;
+  object-fit: cover;
+  flex-shrink: 0;
+  filter: brightness(1.1) saturate(1.2);
+  transition: transform 1.5.s ease, filter 1.5s ease;
+}
+
+.carousel-track img:hover {
+  transform: scale(1.05) rotateZ(1deg);
+  filter: brightness(1.3) drop-shadow(0 0 10px rgb(193, 37, 207));
+}
+
+@keyframes scrolling {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.carrito-flotante {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  width: 300px;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 1em;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  cursor: move; /* para indicar que es arrastrable */
+}
+
+.carrito-flotante .barra-superior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: move;
+}
+
+.cerrar-carrito {
+  cursor: pointer;
+  font-size: 1.2em;
+  color: red;
+}
+
+.oculto {
+  display: none;
+}
+.carrito-flotante button {
+  background-color: #ff4081;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  margin-top: 10px;
+  margin-right: 5px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.carrito-flotante button:hover {
+  background-color: #e73370;
+  transform: scale(1.05);
+}
+
+.carrito-flotante button:active {
+  transform: scale(0.98);
+}
+.carrito-flotante {
+  position: fixed;
+  top: 100px;
+  left: 20px; /* cambia de right a left */
+  width: 300px;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 1em;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  cursor: default;
+}
+
+.barra-superior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: move; /* solo la barra será movible */
+}
+
+.cerrar-carrito {
+  cursor: pointer;
+  font-size: 1.2em;
+  color: red;
+}
+
+
+/* Media Queries para diseño responsivo */
+
+/* Para pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem; /* Tamaño de fuente más pequeño para móviles */
+  }
+
+  p {
+    font-size: 0.9rem; /* Tamaño de fuente más pequeño para móviles */
+  }
+
+  .content {
+    padding: 15px; /* Menos padding en móviles */
+  }
+}
+
+/* Para pantallas medianas (tablets) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  h1 {
+    font-size: 1.8rem; /* Tamaño de fuente intermedio para tablets */
+  }
+
+  p {
+    font-size: 1rem; /* Tamaño de fuente intermedio para tablets */
+  }
+}
+
+/* Para pantallas grandes (escritorios) */
+@media (min-width: 1025px) {
+  h1 {
+    font-size: 2.5rem; /* Tamaño de fuente más grande para escritorios */
+  }
+
+  p {
+    font-size: 1.2rem; /* Tamaño de fuente más grande para escritorios */
+  }
+}
