@@ -134,7 +134,7 @@ function enviarWhatsApp() {
   mensaje += `Medio de pago: ${pago}%0A`;
   mensaje += `Día de entrega: ${diaEntrega}%0A`;
 
-  const numeroWhatsApp = "573006582031";
+  const numeroWhatsApp = "573043877555";
   const url = `https://wa.me/${numeroWhatsApp}?text=${mensaje}`;
 
   window.open(url, "_blank");
