@@ -71,3 +71,25 @@ window.addEventListener("scroll", function () {
     window.addEventListener('mousemove', editCursor);
 
 })();
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+
+  if (!hamburger || !navLinks) {
+    console.error('Elementos no encontrados');
+    return;
+  }
+
+  hamburger.addEventListener('click', function() {
+    navLinks.classList.toggle('active');
+    // Cambiar ícono
+    const icon = hamburger.querySelector('i');
+    if (navLinks.classList.contains('active')) {
+      icon.classList.remove('fa-bars');
+      icon.classList.add('fa-times');
+    } else {
+      icon.classList.remove('fa-times');
+      icon.classList.add('fa-bars');
+    }
+  });
+});
