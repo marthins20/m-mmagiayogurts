@@ -128,7 +128,7 @@ nav {
   box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
 
-/* --- NUEVAS REGLAS PARA EL MENÚ HAMBURGUESA --- */
+/* ===== MENÚ HAMBURGUESA - VERSIÓN CORREGIDA ===== */
 .nav-right {
   display: flex;
   align-items: center;
@@ -150,6 +150,7 @@ nav {
   color: #ffb3b3;
 }
 
+/* Overlay oscuro cuando el menú está abierto */
 .menu-overlay {
   display: none;
   position: fixed;
@@ -164,7 +165,6 @@ nav {
 .menu-overlay.active {
   display: block;
 }
-/* ---------------------------------------------- */
 
 /* ===== MAIN ===== */
 main {
@@ -604,11 +604,12 @@ footer {
   display: block;
 }
 
-/* ===== RESPONSIVE (móviles) ===== */
+/* ===== RESPONSIVE (MÓVILES) ===== */
 @media (max-width: 768px) {
   .hamburger {
-    display: block;
+    display: block; /* Mostrar hamburguesa en móvil */
   }
+
   .nav-links {
     position: fixed;
     top: 0;
@@ -616,8 +617,8 @@ footer {
     width: 80%;
     max-width: 300px;
     height: 100vh;
-    background: rgba(20, 20, 30, 0.98);
-    backdrop-filter: blur(12px);
+    background: rgba(0, 0, 0, 0.95) !important; /* Fondo negro sólido con opacidad */
+    backdrop-filter: blur(10px);
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -628,17 +629,42 @@ footer {
     border-right: 1px solid rgba(255,255,255,0.1);
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
   }
+
   .nav-links.active {
-    left: 0; /* Esta línea es la que hace visible el menú */
+    left: 0; /* Despliega el menú */
   }
+
   .nav-links li {
     width: 100%;
     text-align: center;
+    list-style: none;
   }
+
   .nav-links a {
-    font-size: 1.3rem;
+    font-size: 1.5rem !important; /* Texto más grande */
+    font-weight: 600;
     display: block;
     padding: 1rem;
+    color: white !important; /* Asegura que el texto sea blanco */
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover {
+    color: #ffb3b3 !important; /* Color al pasar el mouse */
+  }
+
+  /* Ajustes adicionales para móvil */
+  header {
+    padding: 0.5rem 1rem;
+  }
+
+  .logo {
+    width: 50px;
+  }
+
+  .carrito-icono {
+    font-size: 1.3rem;
     color: white;
   }
 }
