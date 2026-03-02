@@ -72,24 +72,56 @@ window.addEventListener("scroll", function () {
 
 })();
 document.addEventListener('DOMContentLoaded', function() {
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('navLinks');
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('navLinks');
 
-  if (!hamburger || !navLinks) {
-    console.error('Elementos no encontrados');
-    return;
-  }
+            if (!hamburger || !navLinks) {
+                console.error('Elementos no encontrados');
+                return;
+            }
 
-  hamburger.addEventListener('click', function() {
-    navLinks.classList.toggle('active');
-    // Cambiar ícono
-    const icon = hamburger.querySelector('i');
-    if (navLinks.classList.contains('active')) {
-      icon.classList.remove('fa-bars');
-      icon.classList.add('fa-times');
-    } else {
-      icon.classList.remove('fa-times');
-      icon.classList.add('fa-bars');
-    }
-  });
+            // Crear overlay si no existe
+            let overlay = document.querySelector('.menu-overlay');
+            if (!overlay) {
+                overlay = document.createElement('div');
+                overlay.className = 'menu-overlay';
+                document.body.appendChild(overlay);
+            }
+
+            function toggleMenu() {
+                navLinks.classList.toggle('active');
+                overlay.classList.toggle('active');
+                const icon = hamburger.querySelector('i');
+                if (navLinks.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            }
+
+            hamburger.addEventListener('click', toggleMenu);
+
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', toggleMenu);
+            });
+
+            overlay.addEventListener('click', toggleMenu);
+
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+                    toggleMenu();
+                }
+            });
+        });
+// Pequeño script para manejar clics en enlaces vacíos (solo ejemplo)
+console.log('Footer M&M cargado correctamente.');
+
+// Opcional: evitar que los enlaces de ejemplo recarguen la página
+document.querySelectorAll('footer a[href="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('Enlace de ejemplo - reemplázalo con tu URL real');
+    });
 });
