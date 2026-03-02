@@ -1,59 +1,196 @@
-        /* Animación de entrada para los productos */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+/* Animación de entrada para los productos */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-        .producto-item {
-            animation: fadeInUp 0.4s ease-out;
-        }
+.producto-item {
+    animation: fadeInUp 0.4s ease-out;
+}
 
-        /* Efecto hover en tarjetas */
-        .producto-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
+/* Efecto hover en tarjetas */
+.producto-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
 
-        /* Botón de eliminar con transición */
-        .remove-btn {
-            transition: all 0.2s;
-        }
-        .remove-btn:hover {
-            transform: scale(1.1);
-        }
+/* Botón de eliminar con transición */
+.remove-btn {
+    transition: all 0.2s;
+}
+.remove-btn:hover {
+    transform: scale(1.1);
+}
 
-        /* Selector de cantidad personalizado */
-        .quantity-select {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
-            background-position: right 0.5rem center;
-            background-repeat: no-repeat;
-            background-size: 1.5em 1.5em;
-            appearance: none;
-            padding-right: 2.5rem;
-        }
+/* Selector de cantidad personalizado - Versión unificada */
+.quantity-select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.75rem center; /* Separado del borde */
+    background-repeat: no-repeat;
+    background-size: 1.2em 1.2em; /* Tamaño de flecha ligeramente más pequeño */
+    appearance: none;
+    padding-right: 2.8rem; /* Suficiente espacio para la flecha y el texto */
+    min-width: 6rem; /* Ancho mínimo para que el número no apriete la flecha */
+    text-align: left; /* Alinea el texto a la izquierda */
+    background-color: white;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.75rem;
+    cursor: pointer;
+}
 
-        /* Carrito flotante animado */
-        .carrito-flotante {
-            transition: opacity 0.3s, transform 0.3s;
-        }
-        .carrito-flotante.oculto {
-            opacity: 0;
-            transform: translateY(-10px);
-            pointer-events: none;
-        }
+/* En móviles, ajustamos para pantallas pequeñas */
+@media (max-width: 640px) {
+    .quantity-select {
+        padding-right: 3rem; /* Más espacio en móvil */
+        min-width: 7rem; /* Más ancho para evitar superposición */
+        font-size: 1.1rem; /* Texto más grande */
+        background-position: right 0.7rem center; /* Flecha ligeramente más adentro */
+        background-size: 1.3em 1.3em; /* Flecha ligeramente más grande */
+    }
+}
 
-        /* Mejora en móviles: ajuste de fuente y espaciado */
-        @media (max-width: 640px) {
-            .producto-card {
-                padding: 1rem;
-            }
-            .producto-card .producto-detalle {
-                font-size: 0.9rem;
-            }
-        }
+/* Carrito flotante animado */
+.carrito-flotante {
+    transition: opacity 0.3s, transform 0.3s;
+}
+.carrito-flotante.oculto {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+}
+
+/* ===== RESPONSIVE PARA MÓVILES (CARRITO) ===== */
+@media (max-width: 640px) {
+    /* Ajustes para cada producto */
+    #cart-items-container > div {
+        padding: 1.2rem 1rem !important;
+    }
+
+    /* Imagen un poco más grande */
+    #cart-items-container .w-20 {
+        width: 70px !important;
+        height: 70px !important;
+    }
+
+    /* Texto de detalles del producto más grande */
+    #cart-items-container .producto-detalle h3 {
+        font-size: 1.2rem !important;
+    }
+    #cart-items-container .producto-detalle p {
+        font-size: 1rem !important;
+    }
+
+    /* Alinear subtotal y botón eliminar */
+    #cart-items-container .md\:col-span-2 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
+    /* Subtotal más grande */
+    #cart-items-container .md\:col-span-2 .font-medium {
+        font-size: 1.2rem !important;
+    }
+
+    /* Botón eliminar más grande */
+    #cart-items-container .remove-btn {
+        padding: 0.5rem !important;
+    }
+    #cart-items-container .remove-btn svg {
+        width: 24px !important;
+        height: 24px !important;
+    }
+
+    /* Carrito flotante más grande y legible */
+    .carrito-flotante {
+        left: 5% !important;
+        right: 5% !important;
+        width: 90% !important;
+        top: 100px !important;
+        padding: 1.5rem !important;
+        font-size: 1rem !important;
+    }
+    .carrito-flotante h3 {
+        font-size: 1.2rem !important;
+    }
+    .carrito-flotante button {
+        font-size: 1rem !important;
+        padding: 0.75rem !important;
+    }
+
+    /* Ajustar el contenedor de botones de acción en la columna izquierda */
+    .p-6.flex-wrap {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem !important;
+    }
+
+    /* Botones de acción más grandes */
+    .p-6.flex-wrap button {
+        width: 100%;
+        padding: 1rem !important;
+        font-size: 1.1rem !important;
+        margin: 0 !important;
+    }
+
+    /* Separar el botón Cancelar compra */
+    .p-6.flex-wrap button:last-child {
+        margin-top: 0.5rem;
+    }
+
+    /* Ajustar el resumen del pedido */
+    .lg\:w-1\/3 .sticky {
+        position: relative;
+        top: 0;
+    }
+
+    /* Formulario más grande */
+    .space-y-4 > div {
+        margin-bottom: 1rem;
+    }
+
+    /* Inputs y selects más grandes y legibles */
+    input, select {
+        font-size: 1rem !important;
+        padding: 0.75rem !important;
+        min-height: 48px; /* Altura mínima para fácil toque */
+    }
+
+    /* Labels más grandes */
+    label {
+        font-size: 1rem !important;
+        margin-bottom: 0.25rem !important;
+    }
+
+    /* Totales más grandes */
+    .text-gray-600 {
+        font-size: 1.1rem !important;
+    }
+    .text-lg.font-semibold {
+        font-size: 1.3rem !important;
+    }
+}
+
+/* ===== MEJORAS GENERALES ===== */
+/* Evita que el texto se desborde */
+.producto-detalle {
+    word-break: break-word;
+}
+
+/* Transición suave al cambiar tamaño */
+#cart-items-container > div {
+    transition: all 0.3s ease;
+}
