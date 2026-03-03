@@ -304,6 +304,9 @@ main {
 .producto img {
   width: 140px;
   height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 1.2rem;
   filter: drop-shadow(0 10px 8px #00000050);
 }
